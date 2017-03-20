@@ -9,8 +9,14 @@
 
 	var num = prompt("Enter a number");
 
-	var thouRemainder = num % 1000;
-	var thouPlace = (num - thouRemainder) / 1000;
+	var hunThouRemainder = num % 100000;
+	var hunThouPlace = (num - hunThouRemainder) / 100000;
+
+	var tenThouRemainder = hunThouRemainder % 10000;
+	var tenThouPlace = (hunThouRemainder - tenThouRemainder) / 10000;
+
+	var thouRemainder = tenThouRemainder % 1000;
+	var thouPlace = (tenThouRemainder - thouRemainder) / 1000;
 
 	var hunRemainder = thouRemainder % 100;
 	var hunPlace = (thouRemainder - hunRemainder) / 100;
@@ -21,11 +27,12 @@
 	var oneRemainder = tenRemainder % 1;
 	var onePlace = (tenRemainder - oneRemainder) / 1;
 
+	console.log(hunThouPlace + " hundred thousands");
+	console.log(tenThouPlace + " ten thousands");
 	console.log(thouPlace + " thousands");
 	console.log(hunPlace + " hundreds");
 	console.log(tenPlace + " tens");
 	console.log(onePlace + " ones");
-
 
 </script>
 
